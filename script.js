@@ -26,7 +26,7 @@ let files = document.getElementById('mainFiles');
 let givenPassword;
 let passwordTimeout = 0;
 let verfTime = document.getElementById('verfTimer');
-let time = 5;
+let time = 6;
 
 document.getElementById('askPass').addEventListener('click', function()
 {
@@ -54,7 +54,7 @@ document.getElementById('askPass').addEventListener('click', function()
                 document.getElementById('login').style.display = 'none';
                 document.getElementById('entryImg').style.display = 'none';
                 document.getElementById('files').style.display = 'block';
-            }, 5000);
+            }, 6000);
         }   else 
             {
                 alert('INCORRECT PASSWORD!');
@@ -64,7 +64,7 @@ document.getElementById('askPass').addEventListener('click', function()
     
         if (passwordTimeout > 2) 
         {
-            alert('YOU HAVE FAILED ALL 3 ATTEMPS AT THE PASSWORD! MTF TEAMS ARE ENROUTE TO YOUR LOCATION NOW! ETA: 2.4 SECONDS, PREPARE TO BE TERMINATED YOU DISGRACE!');
+            alert('YOU HAVE FAILED ALL 3 ATTEMPS AT THE PASSWORD! MTF TEAMS ARE ENROUTE TO YOUR LOCATION NOW! PREPARE TO BE TERMINATED YOU DISGRACE!');
             document.querySelector('body').style.backgroundColor = 'red';
             document.getElementById('login').style.display = 'none';
             document.getElementById('entryImg').style.display = 'none';
