@@ -42,7 +42,7 @@ document.getElementById('askPass').addEventListener('click', function()
                 verfTime.innerHTML = 'Verification timer: ' + time;
                 time--;
 
-                if (time == 0)
+                if (time === 0)
                 {
                     clearInterval(timer);
                 }
@@ -55,12 +55,15 @@ document.getElementById('askPass').addEventListener('click', function()
                 document.getElementById('entryImg').style.display = 'none';
                 document.getElementById('files').style.display = 'block';
             }, 6000);
-        }   else 
+        }   else if (givenPassword === null)
             {
-                alert('INCORRECT PASSWORD!');
-                console.log('The password was incorrect');
-                passwordTimeout++;
-            };
+                alert('Cancelled');
+            }   else 
+                {
+                    alert('INCORRECT PASSWORD!');
+                    console.log('The password was incorrect');
+                    passwordTimeout++;
+                };
     
         if (passwordTimeout > 2) 
         {
@@ -68,5 +71,6 @@ document.getElementById('askPass').addEventListener('click', function()
             document.querySelector('body').style.backgroundColor = 'red';
             document.getElementById('login').style.display = 'none';
             document.getElementById('entryImg').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
         }
 });
