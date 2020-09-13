@@ -61,8 +61,8 @@ body {
     background-attachment: fixed;
     position: relative;
     color: white;
+    -moz-user-select: none;
     -webkit-user-select: none;
-    user-select: none;
     text-shadow: black 3px 3px 3px;
 }
 
@@ -138,26 +138,26 @@ body {
 
 #askPass {
     background-color: rgb(115, 185, 255);
-    border: white 2px solid;
-    box-shadow: gray 2px 2px 1px;
+    border: silver 3px outset;
     transition-duration: 1s;
     color: white;
     border-radius: 30px;
-    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
     outline: none;
 }
 #askPass:hover {
     background-color:rgb(57, 143, 255);
-    border: silver 2px solid;
+    border: silver 3px outset;
     color: gold;
-    box-shadow: rgb(56, 56, 56) 2px 2px 1px;
+    box-shadow: rgb(87, 87, 87) 2px 2px 1px;
     cursor: pointer;
 }
 #askPass:active {
     transition-duration: 0.2s;
     cursor: progress;
     background-color: rgb(139, 255, 178);
-    border: silver 1px solid;
+    border: silver 2px inset;
 }
 
 /* Second factor auth */
@@ -181,6 +181,8 @@ footer {
     height: 400px;
     background-color: rgb(20, 95, 170);
     position: relative;
+    -moz-user-select: none;
+    -webkit-user-select: none;
     font-family: Arial, Helvetica, sans-serif;
 }
 
