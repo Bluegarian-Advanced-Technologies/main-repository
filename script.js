@@ -63,6 +63,18 @@ document.getElementById('askPass').addEventListener('click', function()
                     alert('INCORRECT PASSWORD!');
                     console.log('The password was incorrect');
                     passwordTimeout++;
+
+                    function playIncorrectSound()
+                    {
+                        let incSoundSrc = document.getElementById('incorrectPassword');
+                        incSoundSrc.play();
+                    }playIncorrectSound();
+
+                    document.getElementById('login').style.backgroundColor = 'red'
+                    setTimeout(function()
+                    {
+                        document.getElementById('login').style.backgroundColor = 'transparent'
+                    }, 1100)
                 };
     
         if (passwordTimeout > 2) 

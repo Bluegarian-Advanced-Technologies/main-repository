@@ -74,7 +74,7 @@ body {
     transform: translate(-50%, -50%);
     font-size: 70px;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto';
     text-decoration: underline;
     padding-bottom: 15%;
 }
@@ -89,18 +89,24 @@ body {
     transform: translate(-50%, -50%);
     font-size: 40px;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto';
 }
 
 /* Login */
 #login {
-    width: 100%;
+    width: 99.3%;
     color: white;
     height: 400px;
+    font-family: 'Roboto';
+    border: 6px solid blue;
+    overflow: hidden;
+    transition-duration: 0.4s;
+}
+#login:hover {
+    border: 6px solid rgb(2, 231, 2)
 }
 
 #loginBox {
-    width: 70%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
@@ -175,12 +181,15 @@ footer {
     height: 400px;
     background-color: rgb(20, 95, 170);
     position: relative;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 footer h1 {
-    padding: 20px 0px;
+    padding: 27px 0px;
     color: white;
     text-align: center;
+    text-decoration: underline;
+    margin: 0;
 }
 
 footer h2 {
