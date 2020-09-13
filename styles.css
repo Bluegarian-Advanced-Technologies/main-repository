@@ -96,16 +96,15 @@ body {
 #login {
     width: 100%;
     color: white;
-    height: 500px;
+    height: 400px;
 }
 
 #loginBox {
-    width: 80%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
-    height: 400px;
-    background-color: dodgerblue;
+    height: 250px;
     position: relative;
     z-index: -1;
 }
@@ -131,6 +130,30 @@ body {
     font-size: 35px;
 }
 
+#askPass {
+    background-color: rgb(115, 185, 255);
+    border: white 2px solid;
+    box-shadow: gray 2px 2px 1px;
+    transition-duration: 1s;
+    color: white;
+    border-radius: 30px;
+    user-select: none;
+    outline: none;
+}
+#askPass:hover {
+    background-color:rgb(57, 143, 255);
+    border: silver 2px solid;
+    color: gold;
+    box-shadow: rgb(56, 56, 56) 2px 2px 1px;
+    cursor: pointer;
+}
+#askPass:active {
+    transition-duration: 0.2s;
+    cursor: progress;
+    background-color: rgb(139, 255, 178);
+    border: silver 1px solid;
+}
+
 /* Second factor auth */
 
 #secondFactorAuth {
@@ -149,7 +172,7 @@ body {
 
 footer {
     width: 100%;
-    height: 500px;
+    height: 400px;
     background-color: rgb(20, 95, 170);
     position: relative;
 }

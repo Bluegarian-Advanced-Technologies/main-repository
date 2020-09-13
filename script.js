@@ -68,7 +68,7 @@ document.getElementById('askPass').addEventListener('click', function()
         if (passwordTimeout > 2) 
         {
             alert('YOU HAVE FAILED ALL 3 ATTEMPS AT THE PASSWORD! MTF TEAMS ARE ENROUTE TO YOUR LOCATION NOW! PREPARE TO BE TERMINATED YOU DISGRACE!');
-            document.querySelector('body').style.backgroundColor = 'red';
+            document.querySelector('body').style = 'background-color: red;';
             document.getElementById('login').style.display = 'none';
             document.getElementById('entryImg').style.display = 'none';
             document.querySelector('footer').style.display = 'none';
