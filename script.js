@@ -77,6 +77,11 @@ document.getElementById('askPass').addEventListener('click', function()
                     }, 1100)
                 };
     
+        if (passwordTimeout > 1)
+        {
+            document.getElementById('if2Fails').innerHTML = '(Last attempt at password)';
+        }
+
         if (passwordTimeout > 2) 
         {
             alert('YOU HAVE FAILED ALL 3 ATTEMPS AT THE PASSWORD! MTF TEAMS ARE ENROUTE TO YOUR LOCATION NOW! PREPARE TO BE TERMINATED YOU DISGRACE!');

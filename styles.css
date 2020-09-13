@@ -122,6 +122,14 @@ body {
     font-size: 45px;
 }
 
+#loginBox h2 {
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 110px;
+    display: block;
+}
+
 #loginDataWrapper {
     margin: 0;
     position: absolute;
