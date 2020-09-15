@@ -1,5 +1,9 @@
 'use strict'; 
 
+// Alert on entry
+
+alert('WARNING! Unauthorized use of this repository is a federal level offence and is subject to punishment by death!');
+
 //Change entryImg height to fullscreen and keep checking for screen size changes
 
 function checkScreenChange() 
