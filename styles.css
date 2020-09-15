@@ -94,7 +94,6 @@ body {
 
 /* Login */
 #login {
-    width: 99.3%;
     color: white;
     height: 400px;
     font-family: 'Roboto';
@@ -107,8 +106,6 @@ body {
 }
 
 #loginBox {
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 5%;
     height: 250px;
     position: relative;
@@ -139,7 +136,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-#loginDataWrapper #askPass {
+#askPass {
     padding: 10px 20px;
     font-size: 35px;
 }
