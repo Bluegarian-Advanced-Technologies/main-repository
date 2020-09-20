@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="document" lang="en">
+<html lang="en">
     <head>
         <title>Tech Repository of Bluegaria</title>
         <meta charset="UTF-8">
@@ -12,7 +12,7 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
     </head>
-    <body>
+    <body id="document">
 <!-- In case there is no JavaScript -->
 
     <noscript>
@@ -43,20 +43,16 @@
         </script>
 
         <section id="login">
-            <div id="loginBox">
-                <h1>Login</h1>
-                <h2 id="if2Fails"></h2>
-                <div id="loginDataWrapper">
-                    <a href="#secondFactorAuth">
-                        <button id="askPass">Input Password</button>
-                    </a>
-                </div>
+            <h1>Login</h1>
+            <h2 id="if2Fails"></h2>
+            <div id="passwordInputWrapper">
+                <input type="text" id="passwordInput" value="" placeholder="Input Password" autocomplete="off">
+                <br/>
+                <a href="#secondFactorAuth">
+                    <button id="askPass">- Login -</button>
+                </a>
             </div>
         </section>
-        <script>
-            var adjustedWidth = window.innerWidth - 6;
-            document.getElementById('loginBox').style.zIndex = '1';
-        </script>
         <section id="secondFactorAuth" style="display: none;">
             <h1 id="verfTimer"></h1>
             <img src="Assets/Images/memetic_kill_agent_img.jpg" alt="memetic_kill_agent_img">
