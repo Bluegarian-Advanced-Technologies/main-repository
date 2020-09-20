@@ -14,16 +14,8 @@ if (termsConfirmation === 'yes' || termsConfirmation === 'Yes')
 
 //Change entryImg height to fullscreen and keep checking for screen size changes
 
-function checkScreenChange() 
-{
 let windowHeight = window.innerHeight;
 document.getElementById('entryImg').style.height = windowHeight + 'px';
-
-    setTimeout(function() 
-    {
-        checkScreenChange();
-    }, 2000);
-}checkScreenChange();
 
 // Make sure only way to get into files is doing the password
 
@@ -40,7 +32,7 @@ document.getElementById('askPass').addEventListener('click', function()
     var passwordInputed = document.getElementById('passwordInput').value;
     if (passwordInputed === 'glorytothebluegarianempire')
         {
-            observerglobal.disconnect();
+            observerGlobal.disconnect();
             
             alert('Correct password, now initiating second factor authentication...');
             document.getElementById('secondFactorAuth').style.display = 'block';
@@ -70,6 +62,8 @@ document.getElementById('askPass').addEventListener('click', function()
             alert('No password given');
         } else 
             {
+                observerGlobal.disconnect();
+
                 alert('INCORRECT PASSWORD!');
                 console.log('The password was incorrect');
                 passwordTimeout++;
@@ -84,7 +78,12 @@ document.getElementById('askPass').addEventListener('click', function()
                 setTimeout(function()
                 {
                     document.getElementById('login').style.backgroundColor = 'transparent'
-                }, 1100)
+                }, 550)
+
+                setTimeout(function()
+                {
+                    observerGlobal.observe(targetNodeGlobal, configGlobal);
+                }, 600)
             };
 
             if (passwordTimeout > 1)
@@ -102,7 +101,9 @@ document.getElementById('askPass').addEventListener('click', function()
             }
 });
 
-let observerglobal;
+let observerGlobal;
+let targetNodeGlobal;
+let configGlobal;
 
 setTimeout(function()
 {
@@ -130,6 +131,8 @@ const callback = function(mutationsList, observer)
 const observer = new MutationObserver(callback);
 observer.observe(targetNode, config);
 
-observerglobal = observer;
+observerGlobal = observer;
+targetNodeGlobal = targetNode;
+configGlobal = config;
 
 }, 100)
