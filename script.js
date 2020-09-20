@@ -1,7 +1,7 @@
 'use strict'; 
 
 // Alert on entry
-/*
+
 let termsConfirmationMsg = `WARNING! Unauthorized use of this repository is a federal level offence and is subject to punishment by death! If you understand this term, type "yes". If you do not agree to this term, click cancel.`
 let termsConfirmation = prompt(termsConfirmationMsg);
 
@@ -10,7 +10,7 @@ if (termsConfirmation === 'yes' || termsConfirmation === 'Yes')
     alert('You have confirmed that you understand the term of use.')
 }else {
     window.location.href = 'https://bluegarian-advanced-technologies.github.io/Connection-Terminated/';
-}*/
+}
 
 //Change entryImg height to fullscreen and keep checking for screen size changes
 
