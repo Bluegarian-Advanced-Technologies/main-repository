@@ -112,13 +112,13 @@ setTimeout(function()
 const targetNode = document.getElementById('document');
 const config = { attributes: true, childList: true, subtree: true };
 
-const callback = function(mutationsList, observer) 
+const callback = function(mutationsList, observer)
     {
     for(const mutation of mutationsList) {
         if (mutation.type === 'childList') 
         {
         document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
-        }   else if (mutation.type === 'attributes') 
+        }   else if (mutation.type === 'attributes')
             {
             document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
             }   else if (mutation.type === 'subtree')
