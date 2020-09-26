@@ -1,17 +1,17 @@
 'use strict'; 
 
 // Alert on entry
-
+/*
 let termsConfirmationMsg = `WARNING! Unauthorized use of this repository is a federal level offence and is subject to punishment by death! If you understand this term, type "yes". If you do not agree to this term, click cancel.`
 let termsConfirmation = prompt(termsConfirmationMsg);
 
-if (termsConfirmation === 'yes' || termsConfirmation === 'Yes') 
+if (termsConfirmation === 'yes' || termsConfirmation === 'Yes' || termsConfirmation === 'YES') 
 {
     alert('You have confirmed that you understand the term of use.')
 }else {
     window.location.href = 'https://bluegarian-advanced-technologies.github.io/Connection-Terminated/';
 }
-
+*/
 //Change entryImg height to fullscreen and keep checking for screen size changes
 
 let windowHeight = window.innerHeight;
@@ -107,8 +107,6 @@ let configGlobal;
 
 setTimeout(function()
 {
-// Prevent modifing the DOM before password is done
-
 const targetNode = document.getElementById('document');
 const config = { attributes: true, childList: true, subtree: true };
 
@@ -134,5 +132,20 @@ observer.observe(targetNode, config);
 observerGlobal = observer;
 targetNodeGlobal = targetNode;
 configGlobal = config;
-
 }, 100)
+
+// -------------- Main files folders JS ------------------------
+
+let spaceVeh = document.getElementById('space-veh');
+let spaceVehContent = document.getElementById('space-veh-content');
+
+function revealSpaceVeh() 
+{
+    if (spaceVehContent.style.display === 'none')
+    {
+        spaceVehContent.style.display = 'block';
+    }else
+     {
+        spaceVehContent.style.display = 'none';
+     };
+}
