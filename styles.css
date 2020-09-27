@@ -145,6 +145,7 @@ body {
     text-align: center;
     margin-top: 50px;
     display: block;
+    font-family: 'Roboto Condensed';
 }
 
 #passwordInputWrapper {
@@ -160,6 +161,7 @@ body {
     padding: 5px 15px;
     background-color: rgb(157, 240, 255);
     color: white;
+    width: 40%;
 }
   #passwordInput::placeholder {
     color: white;
@@ -248,6 +250,40 @@ footer h2 {
 -----------------------
 */
 
+#backTopBtn {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background-color: slateblue;
+    font-size: 70px;
+    color: white;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    transition-duration: 0.5s;
+}
+#backTopBtn:hover {
+    cursor: pointer;
+    color: orange;
+    font-size: 90px;
+}
+#backTopBtn:active {
+    color: greenyellow;
+    cursor: progress;
+    transition-duration: 0.1s;
+}
+
+#afterVerfWelcome {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+    font-family: 'Roboto';
+}
+#afterVerfWelcome h1 {
+    margin: 0;
+}
+
 .class-folder {
     width: 90%;
     height: 35px;
@@ -260,6 +296,7 @@ footer h2 {
     -moz-user-select: none;
     -webkit-user-select: none;
 }
+
 
 .class-folder {
     margin-top: 2%;

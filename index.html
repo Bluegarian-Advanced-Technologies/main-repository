@@ -11,6 +11,7 @@
         <!-- Fonts and graphical links/sources-->
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body id="document">
 <!-- In case there is no JavaScript -->
@@ -58,14 +59,22 @@
             <img src="Assets/Images/memetic_kill_agent_img.jpg" alt="memetic_kill_agent_img">
         </section>
         <main id="files" style="display: none;">
+            <div id="backTopBtn" title="Go to Top"> <i class="fa fa-arrow-circle-up"></i> </div>
+
+            <div id="afterVerfWelcome">
+                <h1>Welcome,<br/><span style="text-decoration: underline;">authorized personnal</span></h1>
+            </div>
+
             <div id="space-veh" class="class-folder" title="View the Space Vehicles section" onclick="revealSpaceVeh()">
                 Space Vehicles
             </div>
             <div id="space-veh-content" style="display:none;font-size:100px;" class="class-folder-content">test</div>
 
-            <div id="land-veh" class="class-folder" title="View the Land Vehicles section">
+            <div id="land-veh" class="class-folder" title="View the Land Vehicles section" onclick="revealLandVeh()">
                 Land Vehicles
             </div>
+            <div id="land-veh-content" style="display:none;font-size:100px;" class="class-folder-content">test</div>
+
             <pre style="font-size: 100px;">
             
             </pre>

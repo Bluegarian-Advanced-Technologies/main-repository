@@ -136,8 +136,14 @@ configGlobal = config;
 
 // -------------- Main files folders JS ------------------------
 
-let spaceVeh = document.getElementById('space-veh');
-let spaceVehContent = document.getElementById('space-veh-content');
+document.getElementById('backTopBtn').addEventListener('click', function()
+{
+    window.scrollTo(0,0)
+});
+
+
+const spaceVeh = document.getElementById('space-veh');
+const spaceVehContent = document.getElementById('space-veh-content');
 
 function revealSpaceVeh() 
 {
@@ -148,4 +154,20 @@ function revealSpaceVeh()
      {
         spaceVehContent.style.display = 'none';
      };
+}
+
+const landVeh = document.getElementById('land-veh');
+const landVehContent = document.getElementById('land-veh-content');
+
+function revealLandVeh()
+{
+    {
+        if (landVehContent.style.display === 'none')
+        {
+            landVehContent.style.display = 'block';
+        }else
+         {
+            landVehContent.style.display = 'none';
+         };
+    }
 }
