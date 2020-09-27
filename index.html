@@ -7,6 +7,92 @@
         <meta name="description" content="The Official Repository of the Empire of Bluegaria">
 
         <link rel="stylesheet" href="styles.css">
+        <style>
+        .class-folder {
+            width: 90%;
+            height: 35px;
+            background-color: rgb(194, 238, 255);
+            text-align: center;
+            border-radius: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            transition-duration: 0.2s;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            margin-top: 2%;
+            font-family: 'Roboto';
+            font-size: 27px;
+            color: rgb(0, 36, 197);
+            font-weight: bold;
+        }
+        
+        .class-folder:hover {
+            cursor: pointer;
+            color: rgb(111, 0, 255);
+        }
+        
+        .class-folder:hover::before {
+            content: "+ ";
+        }
+        .class-folder:hover::after {
+            content: " +";
+        }
+        
+        .class-folder:active {
+            color: rgb(0, 126, 0);
+        }
+        
+        .class-folder-after-press {
+            width: 90%;
+            height: 35px;
+            background-color: rgb(194, 238, 255);
+            text-align: center;
+            border-radius: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            transition-duration: 0.2s;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            font-family: 'Roboto';
+            margin-top: 2%;
+            font-size: 27px;
+            color: rgb(0, 36, 197);
+            font-weight: bold;
+        }
+        
+        .class-folder-after-press:hover {
+            cursor: pointer;
+            color: rgb(111, 0, 255);
+        }
+        
+        .class-folder-after-press:hover::before {
+            content: "- ";
+        }
+        .class-folder-after-press:hover::after {
+            content: " -";
+        }
+        
+        .class-folder-after-press:active {
+            color: rgb(0, 126, 0);
+        }
+        
+        .class-folder-content {
+            transition-duration: 0.7s;
+        }
+        
+        .class-folder-content-container img{
+            width: 400px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        
+        .class-folder-content-container {
+            padding: 20px 0px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+        }
+        </style>
 
         <!-- Fonts and graphical links/sources-->
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
@@ -48,15 +134,13 @@
             <h2 id="if2Fails"></h2>
             <div id="passwordInputWrapper">
                 <input type="text" id="passwordInput" value="" placeholder="Input Password" autocomplete="off" spellcheck="false">
-                <br/>
-                <a href="#secondFactorAuth">
-                    <button id="askPass">- Login -</button>
-                </a>
+            <br/>
+                <button id="askPass">- Login -</button>
             </div>
         </section>
         <section id="secondFactorAuth" style="display: none;">
-            <h1 id="verfTimer"></h1>
-            <img src="Assets/Images/memetic_kill_agent_img.jpg" alt="memetic_kill_agent_img">
+            <h1 id="verfTimer">Please press the image below:</h1>
+            <img src="Assets/Images/memetic_kill_agent_img.jpg" alt="memetic_kill_agent_img" id="meme">
         </section>
         <main id="files" style="display: none;">
             <div id="backTopBtn" title="Go to Top"> <i class="fa fa-arrow-circle-up"></i> </div>
@@ -68,14 +152,14 @@
             <div id="space-veh" class="class-folder" title="View the Space Vehicles section" onclick="revealSpaceVeh()">
                 Space Vehicles
             </div>
-            <div id="space-veh-content" style="display:none;font-size:100px;" class="class-folder-content">
+            <div id="space-veh-content" style="display:none;" class="class-folder-content">
                 <div class="class-folder-content-container">
-                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage">
-                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage">
-                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage">
-                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage">
-                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage">
-                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage">
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
                 </div>
             </div>
 
@@ -84,14 +168,32 @@
             <div id="land-veh" class="class-folder" title="View the Land Vehicles section" onclick="revealLandVeh()">
                 Land Vehicles
             </div>
-            <div id="land-veh-content" style="display:none;font-size:100px;" class="class-folder-content">test</div>
+            <div id="land-veh-content" style="display:none;" class="class-folder-content">
+                <div class="class-folder-content-container">
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                </div>
+            </div>
 
 <hr class="section-divider"/>
 
             <div id="planets" class="class-folder" title="View the Planets section" onclick="revealPlanets()">
                 Planets
             </div>
-            <div id="planets-content" style="display:none;font-size:100px;" class="class-folder-content">test</div>
+            <div id="planets-content" style="display:none;" class="class-folder-content">
+                <div class="class-folder-content-container">
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                    <img src="Assets/Images/placeholderimage.jpg" alt="placeholderimage"/>
+                </div>
+            </div>
 
 <hr class="section-divider"/>
  
@@ -112,5 +214,64 @@
         </audio>
 
         <script src="script.js"></script>
+        <script>
+            // Section Space Veh
+            const spaceVeh = document.getElementById('space-veh');
+            const spaceVehContent = document.getElementById('space-veh-content');
+
+            function revealSpaceVeh() 
+            {
+                spaceVeh.className = 'class-folder-after-press';
+
+                if (spaceVehContent.style.display === 'none')
+                {
+                    spaceVehContent.style.display = 'block';
+                    spaceVeh.title = 'Close the Space Vehicles section';
+                }else
+                {
+                    spaceVehContent.style.display = 'none';
+                    spaceVeh.className = 'class-folder';
+                    spaceVeh.title = 'View the Space Vehicles section';
+                };
+            };
+// Section Land Veh
+            const landVeh = document.getElementById('land-veh');
+            const landVehContent = document.getElementById('land-veh-content');
+
+            function revealLandVeh()
+            {
+                landVeh.className = 'class-folder-after-press'
+
+                if (landVehContent.style.display === 'none')
+                {
+                    landVeh.title = 'Close the Land Vehicles section';
+                    landVehContent.style.display = 'block';
+                }else
+                 {
+                    landVehContent.style.display = 'none';
+                    landVeh.className = 'class-folder';
+                    landVeh.title = 'View the Land Vehicles section';
+                 };
+            };
+
+// Section Planets
+            const planets = document.getElementById('planets')
+            const planetsContent = document.getElementById('planets-content');
+
+            function revealPlanets()
+            {
+                planets.className = 'class-folder-after-press'
+                if (planetsContent.style.display === 'none')
+                {
+                    planets.title = 'Close the Planets section';
+                    planetsContent.style.display = 'block';
+                }else
+                {
+                    planetsContent.style.display = 'none';
+                    planets.className = 'class-folder';
+                    planets.title = 'View the Planets section';
+                };
+            };
+        </script>
     </body>
 </html>

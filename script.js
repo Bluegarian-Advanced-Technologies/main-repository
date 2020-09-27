@@ -24,8 +24,6 @@ let files = document.getElementById('mainFiles');
 // Ask for password
 
 let passwordTimeout = 0;
-let verfTime = document.getElementById('verfTimer');
-let time = 6;
 
 document.getElementById('askPass').addEventListener('click', function()
 {
@@ -35,28 +33,21 @@ document.getElementById('askPass').addEventListener('click', function()
             observerGlobal.disconnect();
             
             alert('Correct password, now initiating second factor authentication...');
-            document.getElementById('secondFactorAuth').style.display = 'block';
 
-            var timer = setInterval(initVerf, 1000);
-            function initVerf()
-            {
-                verfTime.innerHTML = 'Verification timer: ' + time;
-                time--;
+            document.getElementById('secondFactorAuth').style.display = 'block'
+            document.getElementById('secondFactorAuth').scrollIntoView();
 
-                if (time === 0)
+            setTimeout(function(){
+                document.getElementById('meme').style.cursor = 'pointer'
+                
+                document.getElementById('meme').addEventListener('click', function()
                 {
-                    clearInterval(timer);
-                }
-            }
-            initVerf();
-
-            setTimeout(function() {
-                document.getElementById('secondFactorAuth').style.display = 'none';
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('entryImg').style.display = 'none';
-                document.getElementById('files').style.display = 'block';
-            }, 6000);
-
+                    document.getElementById('secondFactorAuth').style.display = 'none';
+                    document.getElementById('login').style.display = 'none';
+                    document.getElementById('entryImg').style.display = 'none';
+                    document.getElementById('files').style.display = 'block';
+                })
+            }, 1200);
         } else if (passwordInputed === '')
         {
             alert('No password given');
@@ -143,48 +134,3 @@ document.getElementById('backTopBtn').addEventListener('click', function()
 {
     window.scrollTo(0,0)
 });
-
-// Section Space Veh
-const spaceVehContent = document.getElementById('space-veh-content');
-
-function revealSpaceVeh() 
-{
-    if (spaceVehContent.style.display === 'none')
-    {
-        spaceVehContent.style.display = 'block';
-    }else
-     {
-        spaceVehContent.style.display = 'none';
-     };
-};
-
-// Section Land Veh
-const landVehContent = document.getElementById('land-veh-content');
-
-function revealLandVeh()
-{
-    {
-        if (landVehContent.style.display === 'none')
-        {
-            landVehContent.style.display = 'block';
-        }else
-         {
-            landVehContent.style.display = 'none';
-         };
-    };
-};
-
-// Section Planets
-
-const planetsContent = document.getElementById('planets-content');
-
-function revealPlanets()
-{
-    if (planetsContent.style.display === 'none')
-    {
-        planetsContent.style.display = 'block';
-    }else
-     {
-        planetsContent.style.display = 'none';
-     };
-};

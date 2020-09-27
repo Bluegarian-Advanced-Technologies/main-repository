@@ -218,7 +218,6 @@ body {
     text-decoration: underline;
 }
 
-
 /* Footer */
 
 footer {
@@ -286,60 +285,4 @@ footer h2 {
 
 .section-divider {
     width: 90%;
-}
-
-.class-folder {
-    width: 90%;
-    height: 35px;
-    background-color: rgb(194, 238, 255);
-    text-align: center;
-    border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    transition-duration: 0.2s;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-}
-
-
-.class-folder {
-    margin-top: 2%;
-    font-family: 'Roboto';
-    font-size: 27px;
-    color: rgb(0, 36, 197);
-    font-weight: bold;
-}
-
-.class-folder:hover {
-    cursor: pointer;
-    text-decoration: underline;
-    color: rgb(111, 0, 255);
-}
-
-.class-folder:hover::before {
-    content: "+ ";
-}
-.class-folder:hover::after {
-    content: " +";
-}
-
-.class-folder:active {
-    color: rgb(0, 126, 0);
-}
-
-.class-folder-content {
-    transition-duration: 0.7s;
-}
-
-.class-folder-content-container img{
-    width: 400px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.class-folder-content-container {
-    padding: 20px 0px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
 }
