@@ -74,11 +74,11 @@ document.getElementById('askPass').addEventListener('click', function()
                     incSoundSrc.play();
                 }playIncorrectSound();
 
-                document.getElementById('login').style.backgroundColor = 'red'
+                document.getElementById('login').style.backgroundColor = 'red';
                 setTimeout(function()
                 {
-                    document.getElementById('login').style.backgroundColor = 'transparent'
-                }, 550)
+                    document.getElementById('login').style.backgroundColor = 'transparent';
+                }, 550);
 
                 setTimeout(function()
                 {
@@ -98,7 +98,7 @@ document.getElementById('askPass').addEventListener('click', function()
                 document.getElementById('login').style.display = 'none';
                 document.getElementById('entryImg').style.display = 'none';
                 document.querySelector('footer').style.display = 'none';
-            }
+            };
 });
 
 let observerGlobal;
@@ -122,8 +122,8 @@ const callback = function(mutationsList, observer)
             }   else if (mutation.type === 'subtree')
                 {
                     document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
-                }
-    }
+                };
+    };
 };
 
 const observer = new MutationObserver(callback);
@@ -132,17 +132,19 @@ observer.observe(targetNode, config);
 observerGlobal = observer;
 targetNodeGlobal = targetNode;
 configGlobal = config;
-}, 100)
+}, 100);
 
-// -------------- Main files folders JS ------------------------
+// -------------- Main files folders JS ------------------------------------------------------
+//----------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------
 
 document.getElementById('backTopBtn').addEventListener('click', function()
 {
     window.scrollTo(0,0)
 });
 
-
-const spaceVeh = document.getElementById('space-veh');
+// Section Space Veh
 const spaceVehContent = document.getElementById('space-veh-content');
 
 function revealSpaceVeh() 
@@ -154,9 +156,9 @@ function revealSpaceVeh()
      {
         spaceVehContent.style.display = 'none';
      };
-}
+};
 
-const landVeh = document.getElementById('land-veh');
+// Section Land Veh
 const landVehContent = document.getElementById('land-veh-content');
 
 function revealLandVeh()
@@ -169,5 +171,20 @@ function revealLandVeh()
          {
             landVehContent.style.display = 'none';
          };
-    }
-}
+    };
+};
+
+// Section Planets
+
+const planetsContent = document.getElementById('planets-content');
+
+function revealPlanets()
+{
+    if (planetsContent.style.display === 'none')
+    {
+        planetsContent.style.display = 'block';
+    }else
+     {
+        planetsContent.style.display = 'none';
+     };
+};
