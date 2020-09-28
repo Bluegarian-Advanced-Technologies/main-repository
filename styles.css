@@ -124,7 +124,6 @@ body {
     height: 330px;
     font-family: 'Roboto';
     border: 6px solid blue;
-    overflow: hidden;
     transition-duration: 0.4s;
 }
 #login:hover {

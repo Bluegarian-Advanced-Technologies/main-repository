@@ -34,12 +34,14 @@ document.getElementById('askPass').addEventListener('click', function()
             
             alert('Correct password, now initiating second factor authentication...');
 
+            document.getElementById('passwordInput').value = '';
+
             document.getElementById('secondFactorAuth').style.display = 'block'
             document.getElementById('secondFactorAuth').scrollIntoView();
 
             setTimeout(function(){
-                document.getElementById('meme').style.cursor = 'pointer'
-                
+                document.getElementById('meme').style.cursor = 'pointer';
+
                 document.getElementById('meme').addEventListener('click', function()
                 {
                     document.getElementById('secondFactorAuth').style.display = 'none';
@@ -47,7 +49,7 @@ document.getElementById('askPass').addEventListener('click', function()
                     document.getElementById('entryImg').style.display = 'none';
                     document.getElementById('files').style.display = 'block';
                 })
-            }, 1200);
+            }, 1500);
         } else if (passwordInputed === '')
         {
             alert('No password given');
@@ -106,13 +108,13 @@ const callback = function(mutationsList, observer)
     for(const mutation of mutationsList) {
         if (mutation.type === 'childList') 
         {
-        document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
+        document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;background-color:yellow;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
         }   else if (mutation.type === 'attributes')
             {
-            document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
+            document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;background-color:yellow;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
             }   else if (mutation.type === 'subtree')
                 {
-                    document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
+                    document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;background-color:yellow;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
                 };
     };
 };
