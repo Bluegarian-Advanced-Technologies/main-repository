@@ -12,16 +12,13 @@ if (termsConfirmation === 'yes' || termsConfirmation === 'Yes' || termsConfirmat
     window.location.href = 'https://bluegarian-advanced-technologies.github.io/Connection-Terminated/';
 }
 */
-//Change entryImg height to fullscreen and keep checking for screen size changes
+
+//Change entryImg height to full screen height
 
 let windowHeight = window.innerHeight;
 document.getElementById('entryImg').style.height = windowHeight + 'px';
 
-// Make sure only way to get into files is doing the password
-
-let files = document.getElementById('mainFiles');
-
-// Ask for password
+// Password system of Advanced Technologies
 
 let passwordTimeout = 0;
 
@@ -36,7 +33,7 @@ document.getElementById('askPass').addEventListener('click', function()
 
             document.getElementById('passwordInput').value = '';
 
-            document.getElementById('secondFactorAuth').style.display = 'block'
+            document.getElementById('secondFactorAuth').style.display = 'block';
             document.getElementById('secondFactorAuth').scrollIntoView();
 
             setTimeout(function(){
@@ -51,7 +48,7 @@ document.getElementById('askPass').addEventListener('click', function()
                 })
             }, 1500);
         } else if (passwordInputed === '')
-        {
+            {
             alert('No password given');
         } else 
             {
@@ -94,13 +91,20 @@ document.getElementById('askPass').addEventListener('click', function()
             };
 });
 
+// Observe DOM and prevent changes to attributes and tags using mutation observer
+
 let observerGlobal;
 let targetNodeGlobal;
 let configGlobal;
 
+function overWriteDOM() 
+{
+    document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;background-color:yellow;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
+}
+
 setTimeout(function()
 {
-const targetNode = document.getElementById('document');
+const targetNode = document.getElementById('DOM');
 const config = { attributes: true, childList: true, subtree: true };
 
 const callback = function(mutationsList, observer)
@@ -108,13 +112,13 @@ const callback = function(mutationsList, observer)
     for(const mutation of mutationsList) {
         if (mutation.type === 'childList') 
         {
-        document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;background-color:yellow;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
+            overWriteDOM();
         }   else if (mutation.type === 'attributes')
             {
-            document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;background-color:yellow;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
+                overWriteDOM();
             }   else if (mutation.type === 'subtree')
                 {
-                    document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;background-color:yellow;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
+                    overWriteDOM();
                 };
     };
 };
@@ -130,7 +134,6 @@ configGlobal = config;
 // -------------- Main files folders JS ------------------------------------------------------
 //----------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------
 
 document.getElementById('backTopBtn').addEventListener('click', function()
 {
