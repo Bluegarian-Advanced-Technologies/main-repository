@@ -13,6 +13,12 @@ if (termsConfirmation === 'yes' || termsConfirmation === 'Yes' || termsConfirmat
 }
 */
 
+document.getElementById("DOM").addEventListener("contextmenu", function(e) 
+{
+    e.preventDefault();
+},false);
+
+
 //Change entryImg height to full screen height
 
 let windowHeight = window.innerHeight;
@@ -28,6 +34,7 @@ document.getElementById('askPass').addEventListener('click', function()
     if (passwordInputed === 'glorytothebluegarianempire')
         {
             observerGlobal.disconnect();
+      //      document.getElementById('DOM').removeEventListener("contextmenu", );
             
             alert('Correct password, now initiating second factor authentication...');
 
@@ -37,6 +44,7 @@ document.getElementById('askPass').addEventListener('click', function()
             document.getElementById('secondFactorAuth').scrollIntoView();
 
             setTimeout(function(){
+                observerGlobal.disconnect();
                 document.getElementById('meme').style.cursor = 'pointer';
 
                 document.getElementById('meme').addEventListener('click', function()
@@ -45,6 +53,20 @@ document.getElementById('askPass').addEventListener('click', function()
                     document.getElementById('login').style.display = 'none';
                     document.getElementById('entryImg').style.display = 'none';
                     document.getElementById('files').style.display = 'block';
+
+                    // Context menu
+
+                    window.addEventListener("contextmenu",function(event)
+                    {
+                        event.preventDefault();
+                        var contextElement = document.getElementById("context-menu");
+                        contextElement.style.top = event.offsetY + "px";
+                        contextElement.style.left = event.offsetX + "px";
+                        contextElement.classList.add("active");
+                    });
+                    window.addEventListener("click",function(){
+                        document.getElementById("context-menu").classList.remove("active");
+                    });
                 })
             }, 1500);
         } else if (passwordInputed === '')

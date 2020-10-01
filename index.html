@@ -77,7 +77,8 @@
         }
         
         .class-folder-content {
-            transition-duration: 0.7s;
+            -moz-user-select: none;
+            -webkit-user-select: none;
         }
         
         .class-folder-content-container img{
@@ -98,8 +99,30 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     </head>
     <body id="document">
+        <div id="context-menu">
+            <div class="item">
+                <i class=""></i> Copy (CTRL + C)
+            </div>
+            <div class="item">
+                <i class=""></i> Paste (CTRL + V)
+            </div>
+            <div class="item">
+                <i class=""></i> a
+            </div>
+            <div class="item">
+                <i class=""></i> a
+            </div>
+            <hr>
+            <div class="item">
+                <i class=""></i> a
+            </div>
+            <div class="item" onclick="">
+                <i class=""></i> Close
+            </div>
+        </div>
 <!-- In case there is no JavaScript -->
 
     <noscript>
@@ -111,12 +134,15 @@
                         site requries JavaScript to run in order to display many things
                         properly! Thank you in advance for your understanding!
                     </p>
-                <img src="Assets/Images/JavaScript-logo.png" alt="JavaScript-logo">
+                    <div style="text-align:center;">
+                        <img src="Assets/Images/JavaScript-logo.png" alt="JavaScript-logo">
+                    </div>
             </div>
         </div>
     </noscript>
 
 <!-- Actual website -->
+
         <div id="entryImg">
             <h1 id="Welcome">Welcome</h1>
             <p id="WelcomeP">
@@ -125,9 +151,6 @@
             </p>
         </div>
         <script>
-            document.getElementById('Welcome').style = 'z-index:1;';
-            document.getElementById('WelcomeP').style = 'z-index:1;';
-
             if (window.innerHeight < 830)
             {
                 document.getElementById('Welcome').style = 'font-size: 50px;text-shadow: black 2.2px 2.2px 3px;z-index:1;'
@@ -136,7 +159,13 @@
         </script>
 
         <section id="login">
-            <h1>Login</h1>
+            <h1>
+                <span style="font-weight: normal;text-decoration: none;">
+                    <i class='fas fa-lock'></i>
+                </span>Login<span style="font-weight: normal;text-decoration: none;">
+                    <i class='fas fa-lock'></i>
+                </span>
+            </h1>
             <h2 id="if2Fails"></h2>
             <div id="passwordInputWrapper">
                 <input type="text" id="passwordInput" value="" placeholder="Input Password" autocomplete="off" spellcheck="false">
@@ -152,7 +181,7 @@
             <div id="backTopBtn" title="Go to Top"> <i class="fa fa-arrow-circle-up"></i> </div>
 
             <div id="afterVerfWelcome">
-                <h1>Welcome,<br/><span style="text-decoration: underline;">authorized personnal</span></h1>
+                <h1>Welcome,<br/><span style="text-decoration: underline;">authorized personal</span></h1>
             </div>
 
             <div id="space-veh" class="class-folder" title="View the Space Vehicles section" onclick="revealSpaceVeh()">
@@ -220,7 +249,7 @@
         </audio>
 
         <script src="script.js"></script>
-        <script>
+        <script role="Folder code">
             // Section Space Veh
             const spaceVeh = document.getElementById('space-veh');
             const spaceVehContent = document.getElementById('space-veh-content');
