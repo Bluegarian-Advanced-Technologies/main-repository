@@ -155,7 +155,7 @@ let configGlobal;
 
 function overWriteDOM() 
 {
-    document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;background-color:yellow;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM!</h1>');
+    document.write('<h1 style="color:red;text-align:center;font-weight:bold;font-size:70px;display:block;background-color:yellow;">INVALID OPERATION! YOU ARE NOT ALLOWED TO MODIFY THE DOM! Please reload the page to reset.</h1>');
 }
 
 setTimeout(function()
