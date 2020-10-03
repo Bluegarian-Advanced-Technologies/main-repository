@@ -6,6 +6,8 @@
         <meta name="author" content="The Emperor of Bluegaria (Jack H.)">
         <meta name="description" content="The Official Repository of the Empire of Bluegaria">
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="styles.css">
         <style>
         .class-folder {
@@ -100,28 +102,22 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body id="document">
         <div id="context-menu">
-            <div class="item">
-                <i class=""></i> Copy (CTRL + C)
+            <div class="item" onclick="copyText()">
+                <i class="fa fa-copy"></i> Copy
             </div>
-            <div class="item">
-                <i class=""></i> Paste (CTRL + V)
-            </div>
-            <div class="item">
-                <i class=""></i> a
-            </div>
-            <div class="item">
-                <i class=""></i> a
+            <div class="item" onclick="location.reload();">
+                <i class="fas fa-undo"></i> Reload
             </div>
             <hr>
-            <div class="item">
-                <i class=""></i> a
+            <div class="item" onclick="openTOU()">
+                <i class="fas fa-eye"></i> View the TOU
             </div>
-            <div class="item" onclick="">
-                <i class=""></i> Close
-            </div>
+
         </div>
 <!-- In case there is no JavaScript -->
 
@@ -181,7 +177,7 @@
             <div id="backTopBtn" title="Go to Top"> <i class="fa fa-arrow-circle-up"></i> </div>
 
             <div id="afterVerfWelcome">
-                <h1>Welcome,<br/><span style="text-decoration: underline;">authorized personal</span></h1>
+                <h1>Welcome,<br/><span style="text-decoration: underline;">authorized personnal</span></h1>
             </div>
 
             <div id="space-veh" class="class-folder" title="View the Space Vehicles section" onclick="revealSpaceVeh()">

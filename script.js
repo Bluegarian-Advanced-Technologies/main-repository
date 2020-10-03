@@ -13,11 +13,39 @@ if (termsConfirmation === 'yes' || termsConfirmation === 'Yes' || termsConfirmat
 }
 */
 
-document.getElementById("DOM").addEventListener("contextmenu", function(e) 
-{
-    e.preventDefault();
-},false);
+// Context menu disable initial and allow on phone and custom functions
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    
+}else{
+    document.getElementById("DOM").addEventListener("contextmenu", function(e) 
+    {
+        e.preventDefault();
+    }, false);
+}
+
+//-
+
+function copyText()
+{
+    var preselection = window.getSelection();
+    var selection = preselection.toString();
+    document.execCommand('copy');
+}
+
+function pasteClipboard()
+{
+    document.execCommand('paste');
+}
+
+
+let TOUDOM = `<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'> <title>Terms of Use</title> <style> body { margin: 0; background-color: rgb(0, 140, 255); font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif; color: white; } h1 { text-align: center; text-decoration: underline; font-size: 40px; } .terms-container { width: 95%; margin-left: auto; margin-right: auto; font-size: 25px; } footer { width: 100%; height: 500px; background-color: rgb(0, 104, 189); text-align: center; font-size: 30px; font-weight: bold; background-image: url('https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1333&q=80'); background-repeat: no-repeat; background-position: center; background-size: cover; } </style> </head> <body> <h1>Terms of Use</h1> <br/> <div class="terms-container"> <p> 1. Authorized personnal are <strong>FOBBIDEN</strong> to share the password, or any content inside the repository. Those who break this term will be punished severely. </p> <p> 2. All unauthorized people who use this repository or attempt to bypass the security of this repository will be subject to punishment by <strong>death</strong>. </p> <p> 3. The Emperor of Bluegaria has full right to give access to the repository for anyone he desires. </p> </div> <footer> <br/> <br/> Bluegarian Advanced Technologies is the proud source of nearly all of The Empire of Bluegaria's technology for nearly all of The Empire's existence. </footer> </body> </html>`;
+let TOUWin;
+
+function openTOU() {
+    TOUWin = window.open("", "TOSWin", "width=800,height=600,top=100,left=450");
+    TOUWin.document.write(TOUDOM);
+}
 
 //Change entryImg height to full screen height
 
@@ -54,16 +82,22 @@ document.getElementById('askPass').addEventListener('click', function()
                     document.getElementById('entryImg').style.display = 'none';
                     document.getElementById('files').style.display = 'block';
 
-                    // Context menu
+                    // Context menu enable custom on desktop/laptop and disable custom on phone
 
-                    window.addEventListener("contextmenu",function(event)
+                    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
                     {
-                        event.preventDefault();
-                        var contextElement = document.getElementById("context-menu");
-                        contextElement.style.top = event.offsetY + "px";
-                        contextElement.style.left = event.offsetX + "px";
-                        contextElement.classList.add("active");
-                    });
+
+                      }else{
+                        window.addEventListener("contextmenu",function(event)
+                        {
+                            event.preventDefault();
+                            var contextElement = document.getElementById("context-menu");
+                            contextElement.style.top = event.offsetY + "px";
+                            contextElement.style.left = event.offsetX + "px";
+                            contextElement.classList.add("active");
+                        });
+                      } 
+
                     window.addEventListener("click",function(){
                         document.getElementById("context-menu").classList.remove("active");
                     });
